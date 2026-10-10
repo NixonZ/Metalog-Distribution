@@ -41,6 +41,8 @@ projects the coefficients so the quantile function stays increasing; queries use
 iterates. The first `warmup` observations (default 100) are fitted in one batch before switching to updates.
 For a distribution that drifts over time, use `average=False, decay=0, lr=0.02` (a constant, smaller step)
 so recent data keeps its influence; the median of a stream that jumps from N(0,1) to N(5,1) recovers within ~1000 steps.
+Larger steps (`lr=0.1`) react faster to sudden changes at the cost of noisier estimates; see
+[examples/cvar_bandits.ipynb](examples/cvar_bandits.ipynb) for a risk-averse bandit comparison.
 
 Fewer terms are usually better: a single metalog cannot represent well-separated modes, and least-squares
 fits with many terms are often infeasible. `is_feasible()` and the warning on construction catch this.

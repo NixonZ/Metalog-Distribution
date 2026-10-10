@@ -165,7 +165,7 @@ class _MetalogBase():
         rng = np.random.default_rng(rng)
         return self.quantile(rng.random(size))
 
-    def cvar(self, alpha: float = 0.05, grid_size: int = 4000) -> float:
+    def cvar(self, alpha: float = 0.05, grid_size: int = 500) -> float:
         # Conditional value at risk of the lower tail: the mean of the worst alpha fraction of
         # outcomes, (1/alpha) * integral_0^alpha Q(y) dy. Integrated in logit space so the tail is resolved.
         if not 0 < alpha <= 1:
