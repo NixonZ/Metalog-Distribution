@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metalog-distribution"
+version = "0.1.0"
+description = "Python implementation of the Metalog distribution (Keelin, 2016)."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+dependencies = ["numpy"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/NixonZ/Metalog-Distribution"
+
+[tool.setuptools]
+py-modules = ["metalog"]
